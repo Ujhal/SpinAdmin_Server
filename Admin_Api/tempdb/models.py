@@ -27,8 +27,7 @@ class User(models.Model):
         check_type])
     doc = models.FileField(upload_to=cfile, null=True, blank=True, validators=[
                            FileExtensionValidator(['pdf', 'jpg', 'jpeg', 'png'])])
-    status = models.CharField(max_length=10)
-    processed = models.BooleanField(default=False)
+    status = models.CharField(max_length=10,default='processing')
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     remarks = models.CharField(max_length=30,null= True)
